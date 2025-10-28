@@ -1,0 +1,140 @@
+# MovieRecommender
+A complete movie recommendation system project using machine learning and content-based filtering via Python featuring:
+
+- **Content-Based Filtering** using movie metadata
+- **Cosine Similarity** for recommendation matching  
+- **Interactive Web Interface** with Streamlit
+- **Movie Poster Integration** via TMDB API
+
+Implemented using Python with scikit-learn, pandas, and streamlit for training and deployment.
+
+## 📌 Overview
+This project provides personalized movie recommendations by analyzing movie content features such as genres, keywords, cast, crew, and plot overview. The system uses Natural Language Processing and machine learning techniques to suggest similar movies based on user selection.
+
+✅ **Content-Based Filtering** using movie metadata analysis  
+✅ **TF-IDF Vectorization** with CountVectorizer for text processing  
+✅ **Cosine Similarity** algorithm for finding movie similarities  
+✅ **Interactive Streamlit Web App** with movie poster display  
+
+All model training and data preprocessing are implemented in Jupyter notebooks with deployment via Streamlit.
+
+## 💡 Features
+🎬 **Recommends 5 similar movies** based on content similarity  
+🖼️ **Movie poster display** using TMDB API integration  
+📊 **Interactive Jupyter notebook** for reproducible ML training and analysis  
+🛠️ **Clean and documented Python code** with comprehensive preprocessing  
+📁 **TMDB 5000 Movie Dataset** with rich metadata including cast, crew, and genres  
+🌐 **User-friendly web interface** built with Streamlit  
+
+## 📂 Project Structure
+```
+MovieRecommender/
+│
+├── MovieRecommendation.ipynb    # Complete ML pipeline and model training
+├── recommender.py              # Streamlit web application
+├── movies.pkl                  # Processed movie dataset (pickled)
+├── similarity.pkl              # Cosine similarity matrix (pickled)
+├── data/                       # Dataset directory
+│   ├── tmdb_5000_movies.csv   # Movie metadata
+│   └── tmdb_5000_credits.csv  # Cast and crew information
+├── requirements.txt            # Python dependencies
+└── README.md                   # Project documentation
+```
+
+## 🚀 How to Use
+
+### 1. Clone the repository:
+```bash
+git clone https://github.com/BigHero006/MeroMovieRecommender.git
+cd MeroMovieRecommender
+```
+
+### 2. Install Dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Data Preparation (Optional - if running from scratch):
+Open and run the Jupyter notebook:
+```bash
+jupyter notebook MovieRecommendation.ipynb
+```
+- This will download datasets, preprocess data, and generate the pickle files
+- Run all cells to create `movies.pkl` and `similarity.pkl`
+
+### 4. Launch the Web Application:
+```bash
+streamlit run recommender.py
+```
+
+### 5. Use the Recommender:
+1. Open your browser and go to `http://localhost:8501`
+2. Select a movie from the dropdown menu
+3. Click "Show Recommendation" to get 5 similar movies with posters
+
+## 🛠️ Technical Implementation
+
+### Data Preprocessing:
+- **Text Processing**: Overview, genres, keywords tokenization
+- **Feature Engineering**: Cast and crew extraction (top 3 actors, director)
+- **Text Normalization**: Lowercasing, space removal, stemming
+- **Feature Combination**: Merging all features into unified tags
+
+### Machine Learning Pipeline:
+- **Vectorization**: CountVectorizer with 5000 max features
+- **Similarity Calculation**: Cosine similarity matrix computation
+- **Recommendation Logic**: Top 5 most similar movies selection
+
+### Web Application:
+- **Framework**: Streamlit for interactive UI
+- **API Integration**: TMDB API for movie poster fetching
+- **Error Handling**: Graceful fallback for missing posters
+- **Responsive Design**: 5-column layout for recommendations
+
+## 📊 Dataset Information
+- **Source**: TMDB 5000 Movie Dataset
+- **Movies**: ~5000 movies with comprehensive metadata
+- **Features**: Title, overview, genres, keywords, cast, crew, budget, revenue
+- **Processing**: Merged credits and movies data for complete feature set
+
+## 🔧 Requirements
+```
+streamlit==1.49.1
+pandas==2.3.2
+numpy==2.3.3
+scikit-learn==1.5.2
+nltk==3.9.1
+requests==2.32.5
+pickle (built-in)
+```
+
+## 🎯 Model Performance
+- **Algorithm**: Content-Based Filtering with Cosine Similarity
+- **Feature Space**: 5000-dimensional TF-IDF vectors
+- **Similarity Range**: 0.0 to 1.0 (higher = more similar)
+- **Recommendation Accuracy**: Based on content feature matching
+
+## 🌟 Future Enhancements
+- [ ] Collaborative filtering integration
+- [ ] User rating system
+- [ ] Advanced NLP with word embeddings
+- [ ] Hybrid recommendation approach
+- [ ] Movie trailer integration
+- [ ] User preference learning
+
+## 🤝 Contributing
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+This project is licensed under the MIT License .
+
+## 🙏 Acknowledgments
+- TMDB for providing the movie dataset and API
+- Streamlit team for the excellent web framework
+- scikit-learn community for machine learning tools
+
+---
